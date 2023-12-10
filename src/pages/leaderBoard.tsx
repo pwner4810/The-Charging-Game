@@ -2,7 +2,7 @@ import React from 'react';
 import { GetServerSideProps } from 'next';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import {getLeaderboard} from "@/api/api";
-import LeaderboardComponent from "@/components/molecules/LeaderboardComponent"; // Adjust the import path
+import LeaderboardComponent from "@/components/organisms/LeaderboardComponent"; // Adjust the import path
 
 export const getServerSideProps: GetServerSideProps = async () => {
     const queryClient = new QueryClient();
