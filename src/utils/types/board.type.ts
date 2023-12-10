@@ -1,5 +1,4 @@
 import {Cell} from "@/utils/types/cable.type";
-import {number} from "prop-types";
 
 export interface GameBoardState {
     cells: Cell[][];

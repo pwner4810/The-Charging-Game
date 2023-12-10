@@ -1,4 +1,4 @@
-import React, {memo, useEffect, useState} from 'react';
+import React, {memo} from 'react';
 import {CableType, Cell as CellType} from '../../utils/types/cable.type';
 import {CustomIcon} from "@/components/atoms/CustomImage";
 
@@ -30,7 +30,6 @@ const Cell: React.FC<CellProps> = memo(({ cell, gridSize, onRotate, isPartOfCorr
         }
     }
 
-
     const rotationClass = getRotationClass(cell?.rotation);
     // Tailwind classes for the cell's content
     const cellContentClasses = `w-full h-full flex justify-center items-center cursor-pointer transform transition duration-300 ease-in-out ${rotationClass}`;
@@ -48,5 +47,5 @@ const Cell: React.FC<CellProps> = memo(({ cell, gridSize, onRotate, isPartOfCorr
     );
 });
 
-Cell.displayName = 'Cell'; // Explicitly setting the display name
+Cell.displayName = 'Cell';
 export default Cell;
