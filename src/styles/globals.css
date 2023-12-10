@@ -1,27 +1,54 @@
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@tailwind base;
+@layer components {
+  .all-\[unset\] {
+    all: unset;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+:root {
+  --big: 0px 0px 70px 0px rgba(0, 0, 0, 0.06);
+  --colourblue-600: rgba(0, 115, 230, 1);
+  --colourgrey-0: rgba(255, 255, 255, 1);
+  --colourgrey-100: rgba(243, 244, 246, 1);
+  --colourgrey-200: rgba(229, 231, 235, 1);
+  --colourgrey-300: rgba(210, 213, 218, 1);
+  --colourgrey-400: rgba(156, 163, 175, 1);
+  --colourgrey-500: rgba(109, 114, 128, 1);
+  --colourgrey-700: rgba(55, 65, 81, 1);
+  --colourgrey-900: rgba(0, 18, 29, 1);
+  --colourgreybackground: rgba(31, 41, 55, 1);
+  --colourred-500: rgba(241, 108, 107, 1);
+  --colourred-600: rgba(223, 42, 42, 1);
+  --colourred-800: rgba(170, 40, 39, 1);
+  --colouryellow-100: rgba(254, 249, 195, 1);
+  --colouryellow-300: rgba(250, 230, 122, 1);
+  --colouryellow-600: rgba(253, 220, 46, 1);
+  --colouryellow-800: rgba(197, 169, 29, 1);
+  --typography-body-md-bold-font-family: "PlusJakarta Sans-Bold", Helvetica;
+  --typography-body-md-bold-font-size: 16px;
+  --typography-body-md-bold-font-style: normal;
+  --typography-body-md-bold-font-weight: 700;
+  --typography-body-md-bold-letter-spacing: 0.08px;
+  --typography-body-md-bold-line-height: 24px;
+  --typography-body-sm-bold-font-family: "PlusJakarta Sans-Bold", Helvetica;
+  --typography-body-sm-bold-font-size: 14px;
+  --typography-body-sm-bold-font-style: normal;
+  --typography-body-sm-bold-font-weight: 700;
+  --typography-body-sm-bold-letter-spacing: 0.14px;
+  --typography-body-sm-bold-line-height: 20px;
+  --typography-body-XS-bold-font-family: "PlusJakarta Sans-Bold", Helvetica;
+  --typography-body-XS-bold-font-size: 12px;
+  --typography-body-XS-bold-font-style: normal;
+  --typography-body-XS-bold-font-weight: 700;
+  --typography-body-XS-bold-letter-spacing: 0.06px;
+  --typography-body-XS-bold-line-height: 16px;
+  --typography-heading-XL-font-family: "PlusJakarta Sans-Bold", Helvetica;
+  --typography-heading-XL-font-size: 48px;
+  --typography-heading-XL-font-style: normal;
+  --typography-heading-XL-font-weight: 700;
+  --typography-heading-XL-letter-spacing: 0px;
+  --typography-heading-XL-line-height: 52px;
+  --white-sm: 5px 5px 30px -2px rgba(255, 255, 255, 0.1);
 }
