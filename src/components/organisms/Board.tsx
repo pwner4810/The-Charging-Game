@@ -2,7 +2,7 @@
 import React, {useCallback, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {rotateCell} from '@/state/gameBoardSlice';
-import Cell from './Cell';
+import Cell from '../molecules/Cell';
 import {AppDispatch, AppState} from "@/state/store";
 import {Charger} from "@/components/atoms/Charger";
 import {Car} from "@/components/atoms/Car";

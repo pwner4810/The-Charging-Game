@@ -11,11 +11,10 @@ interface SelectorButtonProps {
 const FrameButton: React.FC<SelectorButtonProps> = ({label,isSelected,onClick,iconsPath}:SelectorButtonProps) => {
     return (
         <div className='frame-button flex flex-col items-center bg-colourgrey-300 rounded-8 border-solid border-2 border-white p-2 pt-1 rounded-xl ' onClick={onClick}>
-         <div className='text-xs font-bold text-gray-950 w-20  truncate text-center'>
-             <span className="text-xs font-bold text-gray-950 w-20 mb-2 truncate text-center ">{label}</span>
-
+         <div className='text-xs font-bold text-gray-950 w-20  pb-2 truncate text-center'>
+             <span className="text-xs font-bold text-gray-950 w-20 truncate text-center ">{label}</span>
          </div>
-            <div className='flex h-full justify-center mt-1 flex-col items-center gap-1'>
+            <div className='flex h-full justify-center flex-col items-center gap-1'>
                 <CustomIcon
                     className={`${isSelected ? 'fill-colourgreybackground' :''} `}
                     imagePath={iconsPath}

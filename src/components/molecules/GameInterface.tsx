@@ -1,4 +1,4 @@
-import Board from "@/components/molecules/Board";
+import Board from "@/components/organisms/Board";
 import Timer from "@/components/molecules/Timer";
 import React from "react";
 import {ConnectorTypes} from "@/utils/types/cable.type";

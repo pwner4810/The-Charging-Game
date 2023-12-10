@@ -7,14 +7,20 @@ import StatusIndicator from "@/components/atoms/StatusIndicator";
 import React from "react";
 import {ConnectorTypes} from "@/utils/types/cable.type";
 
-
 interface ConnectorTypeSelectionProps {
     selectedConnector: ConnectorTypes | null;
     setSelectedConnector: (connector: ConnectorTypes) => void;
     dispatch: AppDispatch;
 }
 
-const ConnectorTypeSelection: React.FC<ConnectorTypeSelectionProps> = ({ selectedConnector, setSelectedConnector, dispatch }) => {
+const ConnectorTypeSelection: React.FC<ConnectorTypeSelectionProps> = ({selectedConnector, setSelectedConnector, dispatch}) => {
+
+    const handleSelectorClick = (type: ConnectorTypes) => {
+        dispatch(setGameActive(false))
+        dispatch(setCompletionTime(0))
+        setSelectedConnector(type)
+    }
+
     return (
         <div className="flex flex-col items-center space-y-4 bg-colouryellow-100 border-2 rounded-xl p-2">
             <CustomIcon
@@ -31,11 +37,7 @@ const ConnectorTypeSelection: React.FC<ConnectorTypeSelectionProps> = ({ selecte
                         key={type.label}
                         iconsPath={type.iconPath}
                         label={type.label}
-                        onClick={() => {
-                            dispatch(setGameActive(false))
-                            dispatch(setCompletionTime(0))
-                            setSelectedConnector(type)
-                        }}
+                        onClick={() => handleSelectorClick(type)}
                         isSelected={type.label === selectedConnector?.label}
                     />
                 ))}

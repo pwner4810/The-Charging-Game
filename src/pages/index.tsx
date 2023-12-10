@@ -7,7 +7,7 @@ import {resetGame} from "@/state/gameBoardSlice";
 import {useRouter} from "next/router";
 import {PlayerData} from "@/utils/types/leaderBoard.type";
 import {ConnectorTypes} from "@/utils/types/cable.type";
-import ConnectorTypeSelection from "@/components/molecules/ConnectorTypesSelection";
+import ConnectorTypeSelection from "@/components/organisms/ConnectorTypesSelection";
 import GameInterface from "@/components/molecules/GameInterface";
 import Header from "@/components/atoms/Header";
 
