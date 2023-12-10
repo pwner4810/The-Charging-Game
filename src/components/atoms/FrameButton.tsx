@@ -14,7 +14,7 @@ const FrameButton: React.FC<SelectorButtonProps> = ({label,isSelected,onClick,ic
          <div className='text-xs font-bold text-gray-950 w-20  pb-2 truncate text-center'>
              <span className="text-xs font-bold text-gray-950 w-20 truncate text-center ">{label}</span>
          </div>
-            <div className='flex h-full justify-center flex-col items-center '>
+            <div className='flex h-full justify-center flex-col items-center gap-1'>
                 <CustomIcon
                     className={`${isSelected ? 'fill-colourgreybackground' :''} `}
                     imagePath={iconsPath}
