@@ -1,0 +1,38 @@
+name: 'Reusable Build Action'
+description: 'Builds the project'
+inputs:
+  node-version:
+    description: 'Node.js version to use'
+    required: true
+    default: '18'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+      shell: bash
+
+    - name: run tests
+      run: yarn test
+      shell: bash
+
+    - name: Build
+      run: yarn build
+      shell: bash
