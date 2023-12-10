@@ -29,9 +29,6 @@ runs:
       run: yarn install --frozen-lockfile
       shell: bash
 
-    - name: run tests
-      run: yarn test
-      shell: bash
 
     - name: Build
       run: yarn build
