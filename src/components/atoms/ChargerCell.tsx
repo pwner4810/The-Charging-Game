@@ -1,9 +1,9 @@
 import React from "react";
 import {CustomIcon} from "@/components/atoms/CustomImage";
 
-export const Charger = () => {
+export const ChargerCell = () => {
     return (
-        <div className="absolute top-0 left-0 transform  -translate-x-10">
+        <div className="absolute top-0 left-0 transform  -translate-x-10 ">
             <CustomIcon
                 imagePath="/img/charger.svg"
                 width={36}

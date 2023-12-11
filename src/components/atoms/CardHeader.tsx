@@ -4,19 +4,21 @@ import {CustomIcon} from "@/components/atoms/CustomImage";
 
 interface HeaderProps {
     router: NextRouter;
+    navigatePage:()=>void
 
 }
 
-const Header: React.FC<HeaderProps> = ({router}) => {
+const CardHeader: React.FC<HeaderProps> = ({router,navigatePage}) => {
     return (
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full p-2">
             <CustomIcon
                 className='cursor-pointer'
                 imagePath="/img/profile.svg"
-                width={36}
-                onClick={()=>router.push('/leaderBoard')}
+                width={32}
+                onClick={navigatePage}
 
             />
+
             <div className="flex-1 flex justify-center mr-10">
                 <CustomIcon
                     imagePath="/img/brand-logo.svg"
@@ -27,4 +29,4 @@ const Header: React.FC<HeaderProps> = ({router}) => {
     );
 };
 
-export default Header;
+export default CardHeader;

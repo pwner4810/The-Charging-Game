@@ -4,8 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {rotateCell} from '@/state/gameBoardSlice';
 import Cell from '../molecules/Cell';
 import {AppDispatch, AppState} from "@/state/store";
-import {Charger} from "@/components/atoms/Charger";
-import {Car} from "@/components/atoms/Car";
+import {ChargerCell} from "@/components/atoms/ChargerCell";
+import {CarCell} from "@/components/atoms/CarCell";
 
 const Board: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -45,8 +45,8 @@ const Board: React.FC = () => {
                     })}
                 </div>
             ))}
-            <Charger/>
-            <Car/>
+            <ChargerCell/>
+            <CarCell/>
         </div>
     );
 };

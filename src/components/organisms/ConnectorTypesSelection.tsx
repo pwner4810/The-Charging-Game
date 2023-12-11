@@ -1,6 +1,6 @@
 import {CustomIcon} from "@/components/atoms/CustomImage";
 import {AppDispatch} from "@/state/store";
-import FrameButton from "@/components/atoms/FrameButton";
+import FrameButton from "@/components/molecules/FrameButton";
 import {connectorTypes} from "@/constants/game.constants";
 import {setCompletionTime, setGameActive} from "@/state/gameBoardSlice";
 import StatusIndicator from "@/components/atoms/StatusIndicator";
@@ -25,11 +25,19 @@ const ConnectorTypeSelection: React.FC<ConnectorTypeSelectionProps> = ({selected
         <div className="flex flex-col items-center space-y-4 bg-colouryellow-100 border-2 rounded-xl p-2">
             <CustomIcon
                 imagePath="/img/charge.svg"
-                width={36}
-                height={36}
+                width={46}
+                height={46}
             />
             <div className="text-center font-body text-xl mb-4">
-                {!!selectedConnector ? "Press Start your session to proceed..." : "Select your connector type..."}
+                {!!selectedConnector ? (
+                    <>
+                        Press <strong>Start your session</strong> to proceed...
+                    </>
+                ) : (
+                    <>
+                        Select your <strong>connector type</strong>...
+                    </>
+                )}
             </div>
             <div className="flex flex-row space-x-1 justify-center">
                 {connectorTypes.map((type) => (
