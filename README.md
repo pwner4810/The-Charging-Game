@@ -21,7 +21,10 @@ of the top left cell. The car is connected to the right side of the bottom right
 ## Usage
 - Start the server with `npm run dev` or `yarn dev`.
 - Access the application at `http://localhost:3000`.
-- 
+
+## Test
+- run test cases with `npm run test` or `yarn test`.
+  
 ## [LIVE DEMO](https://puzzle-game-e4233.web.app/)
 - I deployed the project on Firebase so you can check the game LIVE 
 - ***important to know*** the backend service is not deployed so when you click on button its disabled on PRD , so thats only for playing game 
@@ -42,7 +45,8 @@ please take a look at this to get more in detail
 - Responsive UI 
 - Redux 
 - React-query 
-- 
+- test cases using jest
+   
 ## Game Features
 - Puzzle generation based on the connector type example size=> `CCS : 3 X 3` `CHAdeMO : 5 X 5` `AC : 8 X 8`
 - Start and reset the session by clicking on the button
