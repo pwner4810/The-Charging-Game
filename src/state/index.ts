@@ -1,4 +1,3 @@
-// Add this inside your src/store/index.ts
 import {useMemo} from 'react';
 import {AppState, AppStore, makeStore} from "@/state/store";
 

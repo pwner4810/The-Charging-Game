@@ -10,7 +10,7 @@ interface SelectorButtonProps {
 
 const FrameButton: React.FC<SelectorButtonProps> = ({label,isSelected,onClick,iconsPath}:SelectorButtonProps) => {
     return (
-        <div className='frame-button flex flex-col items-center bg-colourgrey-300 rounded-8 border-solid border-2 border-white p-2 pt-1 rounded-xl ' onClick={onClick}>
+        <div className={`frame-button flex flex-col items-center bg-colourgrey-300 rounded-8 border-solid border-2  p-2 pt-1 rounded-xl ${isSelected ? 'bg-colouryellow-300 border-gray-900' : 'border-white'}`} onClick={onClick}>
          <div className='text-xs font-bold text-gray-950 w-20  pb-2 truncate text-center'>
              <span className="text-xs font-bold text-gray-950 w-20 truncate text-center ">{label}</span>
          </div>
@@ -23,8 +23,6 @@ const FrameButton: React.FC<SelectorButtonProps> = ({label,isSelected,onClick,ic
                 />
                 {isSelected && <div className="bg-colourgreybackground p-1 text-white rounded text-xs">Selected</div>}
             </div>
-
-
         </div>
     );
 };

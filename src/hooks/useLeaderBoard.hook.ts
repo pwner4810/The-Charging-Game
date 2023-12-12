@@ -1,6 +1,6 @@
 // src/hooks/useLeaderboard.ts
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getLeaderboard, postToLeaderboard, resetLeaderboard } from '@/api/api';
+import { getLeaderboard, postToLeaderboard, resetLeaderboard } from '@/api/leaderBoard.api';
 
 export const useFetchLeaderboard = () => {
     return useQuery(['leaderboard'], getLeaderboard);

@@ -8,8 +8,8 @@ import {useRouter} from "next/router";
 import {PlayerData} from "@/utils/types/leaderBoard.type";
 import {ConnectorTypes} from "@/utils/types/cable.type";
 import ConnectorTypeSelection from "@/components/organisms/ConnectorTypesSelection";
-import GameInterface from "@/components/molecules/GameInterface";
-import Header from "@/components/atoms/Header";
+import GameInterface from "@/components/organisms/GameInterface";
+import CardHeader from "@/components/atoms/CardHeader";
 
 export default function Home() {
     const router = useRouter();
@@ -21,7 +21,6 @@ export default function Home() {
     const mutation = useAddToLeaderboard(() => {
         navigatePage()
     });
-
     const handleResetGame = () => {
         setGameStart(true)
         dispatch(resetGame({gridSize: selectedConnector?.gridSize ?? 3}));
@@ -29,7 +28,7 @@ export default function Home() {
 
     const navigatePage = () => {
         // Navigate to the leaderboard page on success
-        router.push('/leaderBoard').then(()=>{
+        router.push('/leaderBoard').then(() => {
             dispatch(resetGame({gridSize: selectedConnector?.gridSize ?? 3}));
         })
     };
@@ -43,9 +42,10 @@ export default function Home() {
     }, [selectedConnector])
 
     return (
-        <div className="container mx-auto ">
-            <div className="flex flex-col items-center space-y-4 bg-colouryellow-300 p-4 ">
-                <Header router={router}/>
+        <div className="container mx-auto flex md:items-center justify-center min-h-screen p-4">
+            <div
+                className="flex flex-col items-center space-y-4 bg-colouryellow-300 p-4 md:border-2 border-gray-900 w-fit rounded ">
+                <CardHeader router={router} navigatePage={navigatePage}/>
 
                 {!isCircuitComplete && <ConnectorTypeSelection
                     selectedConnector={selectedConnector}
@@ -61,10 +61,17 @@ export default function Home() {
                 />
 
                 {isCircuitComplete &&
-                    <div>
+                    <div className="opacity-0 animate-fadeIn">
                         <PlayerForm onPlayerSubmit={handlePlayerSubmit} initialTime={completionTime}/>
                     </div>
                 }
+
+
+                {mutation.isError && (
+                    <div className="text-red-500">
+                        {(mutation.error as Error).message}
+                    </div>
+                )}
 
             </div>
 
