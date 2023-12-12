@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
+      - 'releases/*'
 
 jobs:
   build_and_test:
@@ -20,7 +24,11 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: build-artifacts
+          name: build-artifacts-${{ github.run_id }}
           path: build/
+
+      - name: Run tests
+        run: yarn test
+        shell: bash
 
 
