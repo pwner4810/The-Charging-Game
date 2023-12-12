@@ -14,6 +14,7 @@ of the top left cell. The car is connected to the right side of the bottom right
 ## Installation and Setup
 - Clone the repository.
 - Navigate to the project's root directory.
+- ***important***  Rename .env.example to .env
 - Run `npm install` or `yarn` to install dependencies.
 
 ## Usage
@@ -22,7 +23,7 @@ of the top left cell. The car is connected to the right side of the bottom right
 - 
 ## [LIVE DEMO](https://puzzle-game-e4233.web.app/)
 - I deployed the project on Firebase so you can check the game LIVE 
-- ***important to know*** the backend service is not deployed so when you click on button you will get failed to fetch , so thats only for playing game 
+- ***important to know*** the backend service is not deployed so when you click on button its disabled on PRD , so thats only for playing game 
 - click here to see demo [DEMO LIVE](https://puzzle-game-e4233.web.app/)
 ##
 <p align="center">
