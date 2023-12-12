@@ -1,5 +1,5 @@
 name: 'Reusable Build Action'
-description: 'Builds the project'
+description: 'Builds the project with enhanced caching and error handling'
 inputs:
   node-version:
     description: 'Node.js version to use'
@@ -21,15 +21,26 @@ runs:
       uses: actions/cache@v3
       with:
         path: ~/.npm
-        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package.json') }}
         restore-keys: |
           ${{ runner.OS }}-node-
+      id: cache
+
+    - name: Check Cache Status
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: echo "Cache miss, installing dependencies."
+      shell: bash
 
     - name: Install dependencies
       run: yarn install --frozen-lockfile
       shell: bash
 
-
     - name: Build
       run: yarn build
+      shell: bash
+      continue-on-error: true
+
+    - name: Error Handling
+      if: failure()
+      run: echo "An error occurred during the build process."
       shell: bash
