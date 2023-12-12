@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const router = useRouter()
     return (
         <div className="flex flex-col min-h-screen bg-colouryellow-300">
-            <main>{children}</main>
+            <main className='min-h-screen'>{children}</main>
             <Footer/>
         </div>
     );

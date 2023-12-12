@@ -19,7 +19,9 @@ const LeaderboardComponent: React.FC = () => {
 
     return (
         <div className="max-w-2xl mx-auto my-8 p-4">
-            <Button message="Back to Home" disabled={false} onClick={() => router.push('/')}/>
+            <div className='mb-4'>
+                <Button message="Back to Home" disabled={false} onClick={() => router.push('/')}/>
+            </div>
             <h1 className="text-2xl font-bold text-center mb-4">Leaderboard</h1>
 
             <input
