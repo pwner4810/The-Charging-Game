@@ -8,6 +8,7 @@ interface PlayerFormProps {
 }
 
 const PlayerForm: React.FC<PlayerFormProps> = ({ onPlayerSubmit, initialTime }) => {
+    const isProduction = process.env.CAN_CALL_API
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
@@ -45,7 +46,7 @@ const PlayerForm: React.FC<PlayerFormProps> = ({ onPlayerSubmit, initialTime }) 
                 />
             </div>
 
-            <Button  message={'Submit'} disabled={false} type="submit"/>
+            <Button message={'Submit'} disabled={!isProduction} type="submit"/>
         </form>
     );
 };
