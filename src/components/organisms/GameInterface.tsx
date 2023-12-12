@@ -28,7 +28,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({isCircuitComplete, isGames
     }, [isCircuitComplete, seconds, stopTimer, dispatch]);
 
     return (
-        <div className='px-4 pb-8 '>
+        <div className='px-8 pb-8 '>
             <div className='flex flex-col items-center gap-4 mb-4 pt-2'>
                 <Button disabled={!selectedConnector} onClick={() => {
                     startTimer();
