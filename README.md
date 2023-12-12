@@ -15,6 +15,7 @@ of the top left cell. The car is connected to the right side of the bottom right
 - Clone the repository.
 - Navigate to the project's root directory.
 - ***important***  Rename .env.example to .env
+- the env file should contain this variable inside `API_URL='http://localhost:12345/leaderboard'`
 - Run `npm install` or `yarn` to install dependencies.
 
 ## Usage
