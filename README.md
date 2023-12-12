@@ -20,9 +20,19 @@ of the top left cell. The car is connected to the right side of the bottom right
 - Start the server with `npm run dev` or `yarn dev`.
 - Access the application at `http://localhost:3000`.
 - 
-## Usage
-- In order to run test cases use `npm run test` or `yarn test`.
-- 
+## [LIVE DEMO](https://puzzle-game-e4233.web.app/)
+- I deployed the project on Firebase so you can check the game LIVE 
+- ***important to know*** the backend service is not deployed so i disabled the button to submit , so thats only for playing game purpose
+- click here to see demo [DEMO LIVE](https://puzzle-game-e4233.web.app/)
+##
+<p align="center">
+ <img src="https://github.com/pwner4810/The-Charging-Game/blob/main/public/img/game.gif?raw=true">
+</p>
+
+
+please take a look at this to get more in detail
+- [How to Play the Game](#how-to-play-the-game)
+
 ## Features
 - user interface with React and Next.js.
 - Tailwind CSS for responsive design.
