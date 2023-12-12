@@ -8,6 +8,7 @@ interface PlayerFormProps {
 }
 
 const PlayerForm: React.FC<PlayerFormProps> = ({ onPlayerSubmit, initialTime }) => {
+    const isProduction = process.env.API_URL !== null && process.env.API_URL !== undefined;
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
@@ -45,7 +46,7 @@ const PlayerForm: React.FC<PlayerFormProps> = ({ onPlayerSubmit, initialTime }) 
                 />
             </div>
 
-            <Button  message={'Submit'} disabled={false} type="submit"/>
+            <Button message={'Submit'} disabled={!isProduction} type="submit"/>
         </form>
     );
 };

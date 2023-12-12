@@ -2,7 +2,7 @@
 
 import {LeaderboardResponse, PlayerData} from "@/utils/types/leaderBoard.type";
 
-const API_URL = 'http://localhost:12345/leaderboard';
+const API_URL = process.env.API_URL || '';
 
 export const getLeaderboard = async (): Promise<LeaderboardResponse> => {
     const response = await fetch(API_URL);
